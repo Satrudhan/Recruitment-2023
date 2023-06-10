@@ -31,12 +31,17 @@ do
     count=$(cat users.txt | grep "$i" | wc -l)
     echo "Count of userid $i: $count"
 done
+
+count=$(cat users.txt | grep -E '553|828|723|698' | wc -l)
+echo "Count of userid : $count"
 ```
 ### Output:
 ```
 $ ./script.sh 
-Count of userid 553: 1
+Count of userid 553: 2
 Count of userid 828: 1
-Count of userid 723: 0
-Count of userid 698: 0
+Count of userid 723: 1
+Count of userid 698: 3
+Count of userid : 7
+
 ```
